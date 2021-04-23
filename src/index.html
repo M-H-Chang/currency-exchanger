@@ -16,18 +16,18 @@
       <label for="usd">Enter United States Dollar:</label>
       <input type="text" id="usd">
       <label for="currency">Exchange to:</label>
-      <select id="currency">
+      <select id="currencyType">
         <option value="Select" disabled default>Select</option>
-        <option value="won">South Korean Won</option>
-        <option value="peso">Spain Peso</option>
-        <option value="cad">Canadian Dollar</option>
-        <option value="aus">Australian Dollar</option>
-        <option value="euro">Euro</option>
+        <option value="KPW">North Korean Won</option>
+        <option value="KRW">South Korean Won</option>
+        <option value="CAD">Canadian Dollar</option>
+        <option value="AUD">Australian Dollar</option>
+        <option value="EUR">Euro</option>
       </select>
       <button type="submit" class="btn btn-success">Exchange</button>
     </form>
     <section>
-      <p id="output"></p>
+      <div id="conversion"></div>
     </section>
   </div>
 </body>
