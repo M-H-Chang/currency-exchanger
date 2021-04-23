@@ -9,6 +9,10 @@ function showCurrency(currencyValue) {
   let curr = $('#currencyType option:selected').val();
   let output = currencyValue.conversion_rate * rate;
   let round = Math.round(output * 100) / 100;
+  if (isNaN(rate)) {
+    return alert("Please Enter a number!");
+  }
+
   if (currencyValue.result === "success") {
     let html = `<p>`;
     html += `Converted: ${round}`;
