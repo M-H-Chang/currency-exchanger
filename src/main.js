@@ -5,10 +5,17 @@ import './css/styles.css';
 import CurrencyExchange from './js/currency.js';
 
 function showCurrency(currencyValue) {
-  let html = `<p>`;
-  html += `Converted: ${currencyValue.conversion_rate}`;
-  html += '</p>';
-  $('#conversion').html(html);
+  if (currencyValue.result === "success") {
+    let html = `<p>`;
+    html += `Converted: ${currencyValue.conversion_rate}`;
+    html += '</p>';
+    $('#conversion').html(html);
+  } else {
+    let html = `<p>`;
+    html += `${currencyValue.result}: Currency not Supported`;
+    html += '</p>';
+    $('#conversion').html(html);
+  }
 }
 
 $('#form').submit(async function(event) {

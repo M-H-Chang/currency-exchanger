@@ -4,6 +4,3 @@ export default class CurrencyExchange {
     return await response.json();
   }
 }
-// let html = `<p>`;
-//     html += `${currencyValue.result}: Currency not Supported`;
-//     $('#conversion').html(html);
