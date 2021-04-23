@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Exchanger</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Currency Exchanger</h1>
+    <p>Enter the amount in United States dollar and convert!</p>
+    <form id="form">
+      <label for="usd">Enter United States Dollar:</label>
+      <input type="text" id="usd">
+      <label for="currency">Exchange to:</label>
+      <select id="currency">
+        <option value="Select" disabled default>Select</option>
+        <option value="won">South Korean Won</option>
+        <option value="peso">Spain Peso</option>
+        <option value="cad">Canadian Dollar</option>
+        <option value="aus">Australian Dollar</option>
+        <option value="euro">Euro</option>
+      </select>
+      <button type="submit" class="btn btn-success">Exchange</button>
+    </form>
+    <section>
+      <p id="output"></p>
+    </section>
+  </div>
+</body>
+
+</html>
