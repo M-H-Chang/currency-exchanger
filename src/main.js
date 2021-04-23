@@ -5,9 +5,10 @@ import './css/styles.css';
 import CurrencyExchange from './js/currency.js';
 
 function showCurrency(currencyValue) {
+  let rate = parseInt($('#usd').val());
   if (currencyValue.result === "success") {
     let html = `<p>`;
-    html += `Converted: ${currencyValue.conversion_rate}`;
+    html += `Converted: ${currencyValue.conversion_rate * rate}`;
     html += '</p>';
     $('#conversion').html(html);
   } else {
