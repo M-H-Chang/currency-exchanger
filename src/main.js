@@ -31,4 +31,20 @@ $('#form').submit(async function(event) {
   } catch (error) {
     console.log(error);
   }
+  if (curr === "KRW") {
+    $('.images').hide();
+    $('#wonImg').show();
+  } else if (curr === "CAD") {
+    $('.images').hide();
+    $('#cadImg').show();
+  } else if (curr === "AUD") {
+    $('.images').hide();
+    $('#audImg').show();
+  } else if (curr === "EUR") {
+    $('.images').hide();
+    $('#euroImg').show();
+  } else {
+    return; 
+  }
+  
 });
