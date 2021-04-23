@@ -6,6 +6,7 @@ import CurrencyExchange from './js/currency.js';
 
 function showCurrency(currencyValue) {
   let rate = parseInt($('#usd').val());
+  let curr = $('#currencyType option:selected').val();
   let output = currencyValue.conversion_rate * rate;
   let round = Math.round(output * 100) / 100;
   if (currencyValue.result === "success") {
@@ -13,13 +14,30 @@ function showCurrency(currencyValue) {
     html += `Converted: ${round}`;
     html += '</p>';
     $('#conversion').html(html);
+    if (curr === "KRW") {
+      $('.images').hide();
+      $('#wonImg').show();
+    } else if (curr === "CAD") {
+      $('.images').hide();
+      $('#cadImg').show();
+    } else if (curr === "AUD") {
+      $('.images').hide();
+      $('#audImg').show();
+    } else if (curr === "EUR") {
+      $('.images').hide();
+      $('#euroImg').show();
+    } else {
+      return; 
+    }
   } else if (currencyValue.result === "error" && currencyValue['error-type'] === "unsupported-code"){
+    $('.images').hide();
     let html = `<p>`;
     html += `${currencyValue.result}: Currency not Supported`;
     html += '</p>';
     $('#conversion').html(html);
   } else {
     let html = `<p>${currencyValue['error-type']}</p>`;
+    $('.images').hide();
     $('#conversion').html(html);
   }
 }
@@ -34,20 +52,4 @@ $('#form').submit(async function(event) {
   } catch (error) {
     console.log(error);
   }
-  if (curr === "KRW") {
-    $('.images').hide();
-    $('#wonImg').show();
-  } else if (curr === "CAD") {
-    $('.images').hide();
-    $('#cadImg').show();
-  } else if (curr === "AUD") {
-    $('.images').hide();
-    $('#audImg').show();
-  } else if (curr === "EUR") {
-    $('.images').hide();
-    $('#euroImg').show();
-  } else {
-    return; 
-  }
-  
 });
