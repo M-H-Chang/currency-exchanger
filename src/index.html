@@ -13,26 +13,32 @@
     <h1>Currency Exchanger</h1>
     <p>Enter the amount in United States dollar and convert!</p>
     <form id="form" class="form-control">
-      <label for="usd">Enter United States Dollar:</label>
-      <input type="text" id="usd">
-      <label for="currency">Exchange to:</label>
-      <select id="currencyType">
-        <option value="Select" disabled selected="selected">Select</option>
-        <option value="KPW">North Korean Won</option>
-        <option value="KRW">South Korean Won</option>
-        <option value="CAD">Canadian Dollar</option>
-        <option value="AUD">Australian Dollar</option>
-        <option value="EUR">Euro</option>
-      </select>
-      <button type="submit" class="btn btn-success">Exchange</button>
+      <div id="textInput" class="form-group">
+        <label for="usd">Enter United States Dollar:</label>
+        <input type="text" id="usd">
+      </div>
+
+      <div class="form-group">
+        <label for="currency">Exchange to:</label>
+        <select id="currencyType">
+          <option value="Select" disabled selected="selected">Select</option>
+          <option value="KPW">North Korean Won</option>
+          <option value="KRW">South Korean Won</option>
+          <option value="CAD">Canadian Dollar</option>
+          <option value="AUD">Australian Dollar</option>
+          <option value="EUR">Euro</option>
+        </select>
+        <button type="submit" class="btn btn-success">Exchange</button>
+      </div>
+      <section>
+        <div id="conversion"></div>
+        <img class="images" id="wonImg" src="https://img.favpng.com/5/14/14/south-korean-won-won-sign-currency-symbol-png-favpng-q8QSF3cMTZJYDZaHimHaABzM8.jpg" alt="Won img">
+        <img class="images" id="cadImg" src="https://www.nicepng.com/png/detail/133-1331729_canadian-dollar-comments-canadian-dollar-symbol-png.png" alt="cad symbol">
+        <img class="images" id="audImg" src="https://www.clipartkey.com/mpngs/m/114-1142434_clip-art-australian-currency-symbol-australian-dollar-symbol.png" alt="aus img">
+        <img class="images" id="euroImg" src="https://cdn.iconscout.com/icon/free/png-512/euro-symbol-1781279-1513600.png" alt="Euro img">
+      </section>
     </form>
-    <section>
-      <div id="conversion"></div>
-      <img class="images" id="wonImg" src="https://img.favpng.com/5/14/14/south-korean-won-won-sign-currency-symbol-png-favpng-q8QSF3cMTZJYDZaHimHaABzM8.jpg" alt="Won img">
-      <img class="images" id="cadImg" src="https://www.nicepng.com/png/detail/133-1331729_canadian-dollar-comments-canadian-dollar-symbol-png.png" alt="cad symbol">
-      <img class="images" id="audImg" src="https://www.clipartkey.com/mpngs/m/114-1142434_clip-art-australian-currency-symbol-australian-dollar-symbol.png" alt="aus img">
-      <img class="images" id="euroImg" src="https://cdn.iconscout.com/icon/free/png-512/euro-symbol-1781279-1513600.png" alt="Euro img">
-    </section>
+
   </div>
 </body>
 
