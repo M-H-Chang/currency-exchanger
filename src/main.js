@@ -13,10 +13,13 @@ function showCurrency(currencyValue) {
     html += `Converted: ${round}`;
     html += '</p>';
     $('#conversion').html(html);
-  } else {
+  } else if (currencyValue.result === "error" && currencyValue['error-type'] === "unsupported-code"){
     let html = `<p>`;
     html += `${currencyValue.result}: Currency not Supported`;
     html += '</p>';
+    $('#conversion').html(html);
+  } else {
+    let html = `<p>${currencyValue['error-type']}</p>`;
     $('#conversion').html(html);
   }
 }
