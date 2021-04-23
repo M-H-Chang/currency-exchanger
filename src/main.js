@@ -6,9 +6,11 @@ import CurrencyExchange from './js/currency.js';
 
 function showCurrency(currencyValue) {
   let rate = parseInt($('#usd').val());
+  let output = currencyValue.conversion_rate * rate;
+  let round = Math.round(output * 100) / 100;
   if (currencyValue.result === "success") {
     let html = `<p>`;
-    html += `Converted: ${currencyValue.conversion_rate * rate}`;
+    html += `Converted: ${round}`;
     html += '</p>';
     $('#conversion').html(html);
   } else {
